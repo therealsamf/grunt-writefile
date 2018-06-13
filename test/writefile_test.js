@@ -62,5 +62,13 @@ exports.writefile = {
         test.expect(1);
         test.equal(actual, expected);
         test.done();
-    }
+    },
+    function_data_options: function(test) {
+        var actual = grunt.file.read('tmp/function');
+        var expected = grunt.file.read('test/expected/function');
+
+        test.expect(1);
+        test.equal(actual, expected);
+        test.done();
+    },
 };

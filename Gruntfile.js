@@ -93,6 +93,19 @@ module.exports = function (grunt) {
                     dest: 'tmp/',
                     flatten: true
                 }]
+            },
+            function_data: {
+                options: {
+                    data: {
+                        value: () => 'function',
+                    },
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'test/fixtures/',
+                    src: '**/function.*',
+                    dest: 'tmp/',
+                }],
             }
         },
 

@@ -50,6 +50,15 @@ module.exports = function (grunt) {
             }
         }
 
+        /* Process unitary functions that return values. This allows for more dynamic data */
+        const keys = Object.keys(data);
+        for (let i = 0; i < keys.length; i++) {
+            const key = keys[i];
+            if (typeof data[key] === 'function') {
+                data[key] = data[key]();
+            }
+        }
+
         return data;
     }
 
